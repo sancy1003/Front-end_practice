@@ -1,0 +1,108 @@
+body {
+  margin: 64px 0 0 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #444444;
+}
+
+.logo {
+  background-image: url(/imgs/logo.png);
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.selectBox {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectItem {
+  display: inline;
+  margin: 0 10px;
+  height: 40px;
+}
+
+.imgbtn:hover {
+  width: 50px;
+  height: 50px;
+}
+
+.selectItem.btnB {
+  background-color: dodgerblue;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.btnB:hover {
+  height: 45px;
+  width: 70px;
+}
+
+.selectItem.btnY {
+  background-color: sandybrown;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.btnY:hover {
+  height: 45px;
+  width: 70px;
+}
+
+.selectItem.btnP {
+  background-color: salmon;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.btnP:hover {
+  height: 45px;
+  width: 70px;
+}
+
+.productBox {
+  margin-top: 40px;
+  display: block;
+  text-align: center;
+}
+
+.product {
+  height: 50px;
+  width: 380px;
+  display: inline-flex;
+  background-color: white;
+  border-radius: 7px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productImg {
+  display: inline;
+  width: 40px;
+  height: 40px;
+  margin: 0 15px;
+}
+
+.productName {
+  display: inline;
+  vertical-align: middle;
+}

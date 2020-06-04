@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/clone-youtube/main.css" />
+    <title>ChanTube</title>
+  </head>
+  <body>
+    <div class="backShadow"></div>
+    <!-- Header part start -->
+    <div class="header">
+      <div class="headerLeft">
+        <i class="menu fas fa-bars"></i>
+        <a href="/clone-youtube/index.html"
+          ><img src="/clone-youtube/img/logo.png" class="headerLogo"
+        /></a>
+      </div>
+      <div class="headerRight">
+        <div class="headerSearchBar">
+          <input type="text" class="search" placeholder="검색" />
+          <button class="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="headerUserMenu">
+          <li class="userMenuItem">
+            <i class="fas fa-video"></i>
+          </li>
+          <li class="userMenuItem">
+            <i class="fas fa-th"></i>
+          </li>
+          <li class="userMenuItem"><i class="fas fa-bell"></i></li>
+          <li class="userProfile">
+            <i class="fas fa-user-circle"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Header part end -->
+    <div class="container">
+      <!-- Sidebar part start-->
+      <div class="sidebar">
+        <ul class="sidebarBox">
+          <li class="sidebarBoxItem selected">
+            <i class="fas fa-home"></i><span class="sidebarItemText">홈</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fab fa-hotjar"></i
+            ><span class="sidebarItemText">인기</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-heart"></i
+            ><span class="sidebarItemText">구독</span>
+          </li>
+        </ul>
+        <ul class="sidebarBox">
+          <li class="sidebarBoxItem">
+            <i class="fas fa-archive"></i
+            ><span class="sidebarItemText">보관함</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-history"></i
+            ><span class="sidebarItemText">시청 기록</span>
+          </li>
+        </ul>
+        <ul class="sidebarBox">
+          <li class="sidebarTitle">인기 <b>CHANTUBE</b></li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-music"></i
+            ><span class="sidebarItemText">음악</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="far fa-futbol"></i
+            ><span class="sidebarItemText">스포츠</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-gamepad"></i
+            ><span class="sidebarItemText">게임</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-film"></i><span class="sidebarItemText">영화</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-newspaper"></i
+            ><span class="sidebarItemText">뉴스</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-book-open"></i
+            ><span class="sidebarItemText">학습</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-book-open"></i
+            ><span class="sidebarItemText">360˚ 동영상</span>
+          </li>
+        </ul>
+        <ul class="sidebarBox">
+          <li class="sidebarTitle"><b>CHANTUBE</b> 더보기</li>
+          <li class="sidebarBoxItem">
+            <i class="fab fa-gratipay"></i
+            ><span class="sidebarItemText">ChanTube Premium</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-headset"></i
+            ><span class="sidebarItemText">실시간</span>
+          </li>
+        </ul>
+        <ul class="sidebarBox">
+          <li class="sidebarBoxItem">
+            <i class="fas fa-cogs"></i><span class="sidebarItemText">설정</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-flag"></i
+            ><span class="sidebarItemText">신고 기록</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-question-circle"></i
+            ><span class="sidebarItemText">고객센터</span>
+          </li>
+          <li class="sidebarBoxItem">
+            <i class="fas fa-comment-alt"></i
+            ><span class="sidebarItemText">의견 보내기</span>
+          </li>
+        </ul>
+        <div class="sidebarBottom">
+          정보&nbsp;&nbsp;프레스&nbsp;&nbsp;저작권&nbsp;&nbsp;문의하기<br />
+          크리에이터&nbsp;&nbsp;광고&nbsp;&nbsp;개발자<br /><br />
+          이용약관&nbsp;&nbsp;개인정보&nbsp;&nbsp;보호<br />
+          정책 및 안전<br />
+          새로운 기능 테스트하기<br /><br /><br />
+          youtube html & css clon cording<br />
+        </div>
+      </div>
+      <!-- Sidebar part end-->
+      <!-- Main part start-->
+      <div class="main">
+        <div class="mainTitle">맞춤 동영상</div>
+        <div class="mainContainer">
+          <div class="videoContainer">
+            <img
+              src="/clone-youtube/img/more&more.jpg"
+              class="videoThumbnail"
+            />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">TWICE(트와이스) "MORE & MORE" M/V</div>
+                <div class="uploaderName">JYP Entertainment</div>
+                <div class="views">조회수 4535만회ㆍ1주 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img
+              src="/clone-youtube/img/feelSpecial.jpg"
+              class="videoThumbnail"
+            />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">TWICE(트와이스) "Feel Special" M/V</div>
+                <div class="uploaderName">JYP Entertainment</div>
+                <div class="views">조회수 2.2억회ㆍ8개월 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img src="/clone-youtube/img/eight.jpg" class="videoThumbnail" />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  [MV] IU(아이유)_eight(에잇)(Prod.&Feat.SUGA of BTS)
+                </div>
+                <div class="uploaderName">1theK (원더케이)</div>
+                <div class="views">조회수 5429만회ㆍ4주 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img src="/clone-youtube/img/palette.jpg" class="videoThumbnail" />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  [MV] IU(아이유)_Palette(vkffpxm)(Feat.G-DRAGON)
+                </div>
+                <div class="uploaderName">1theK (원더케이)</div>
+                <div class="views">조회수 100만회ㆍ1주 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img
+              src="/clone-youtube/img/fourSeasons.jpg"
+              class="videoThumbnail"
+            />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  TAEYEON 태연 '사계 (Four Seasons)' M/V
+                </div>
+                <div class="uploaderName">SMTOWN</div>
+                <div class="views">조회수 3076만회ㆍ1년 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img src="/clone-youtube/img/dinosaur.jpg" class="videoThumbnail" />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  AKMU - 'DINOSAUR' M/V
+                </div>
+                <div class="uploaderName">AKMU</div>
+                <div class="views">조회수 2662만회ㆍ2년 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img src="/clone-youtube/img/mayday.jpg" class="videoThumbnail" />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">VICTON 빅톤 Mayday (메이데이) M/V</div>
+                <div class="uploaderName">VICTON 빅톤</div>
+                <div class="views">조회수 371만회ㆍ1일 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img src="/clone-youtube/img/meteor.jpg" class="videoThumbnail" />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  창모(CHANGMO) - METEOP[Officail Music Video]
+                </div>
+                <div class="uploaderName">Ambition Musik</div>
+                <div class="views">조회수 1395만회ㆍ5개월 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img src="/clone-youtube/img/Q&A.jpg" class="videoThumbnail" />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  [MV] 체리블렛(Cherry Bullet)_Q&A
+                </div>
+                <div class="uploaderName">1theK</div>
+                <div class="views">조회수 954만회ㆍ1년 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img src="/clone-youtube/img/handsUp.jpg" class="videoThumbnail" />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  [MV] 체리블렛(Cherry Bullet)_Hands Up(무릎을 탁 치고)
+                </div>
+                <div class="uploaderName">1theK</div>
+                <div class="views">조회수 369만회ㆍ3개월 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img
+              src="/clone-youtube/img/hinapia_drip.jpg"
+              class="videoThumbnail"
+            />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  [MV] HINAPIA_DRIP
+                </div>
+                <div class="uploaderName">1theK</div>
+                <div class="views">조회수 261만회ㆍ6개월 전</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="videoContainer">
+            <img
+              src="/clone-youtube/img/bingleBangle.jpg"
+              class="videoThumbnail"
+            />
+            <div class="videoInfoContainer">
+              <img class="uploaderProfile" />
+              <i class="fas fa-user-circle"></i>
+              <div class="videoInfo">
+                <div class="videoSub">
+                  [MV] AOA_Bingle Bangle(빙글뱅글)
+                </div>
+                <div class="uploaderName">1theK</div>
+                <div class="views">조회수 2661만회ㆍ2년 전</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main part end-->
+    </div>
+
+    <script src="/clone-youtube/main.js"></script>
+  </body>
+</html>
