@@ -115,6 +115,7 @@ body {
   margin-right: 20px;
   padding: 0 10px;
   height: 80px;
+  cursor: pointer;
 }
 
 .header-menu-item:hover {
@@ -148,34 +149,29 @@ body {
   display: none;
   color: white;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .mobile-title {
+  display: inline-block;
   width: 120px;
-  left: 40vw;
+  left: 38%;
   height: auto;
-  position: absolute;
   display: none;
   color: white;
+  margin: 0;
+  cursor: pointer;
+  pointer-events: initial;
 }
 
-@media screen and (max-width: 1000px) {
-  .movie {
-    min-width: none;
-    height: 600px;
-  }
-  .video-screen-main-box {
-    top: 220px;
-  }
-  .header-menu-box {
-    display: none;
-  }
-  .mobile-menu {
-    display: block;
-  }
-  .mobile-title {
-    display: block;
-  }
+.mobile-title-cennter-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 80px;
+  pointer-events: none;
 }
 
 .video-box-btn-container {
@@ -203,8 +199,8 @@ body {
   position: relative;
   background-color: transparent;
   padding: 0.45em;
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
+  border-top: 1px solid rgba(236, 232, 225, 0.5);
+  border-bottom: 1px solid rgba(236, 232, 225, 0.5);
 }
 
 .video-box-btn-outline-top {
@@ -215,6 +211,7 @@ body {
   height: 45%;
   border-right: 1px solid #ececec;
   border-left: 1px solid #ececec;
+  opacity: 0.5;
 }
 
 .video-box-btn-outline-bottom {
@@ -225,6 +222,7 @@ body {
   height: 45%;
   border-right: 1px solid #ececec;
   border-left: 1px solid #ececec;
+  opacity: 0.5;
 }
 
 .video-box-btn-moveBox {
@@ -262,4 +260,108 @@ body {
   left: -0.8em;
   width: 17em;
   height: auto;
+}
+
+.main {
+  position: absolute;
+  top: 50vw;
+}
+
+.main-top {
+  position: relative;
+  width: 100vw;
+}
+
+.main-top-stroke-text1 {
+  font-size: 17vw;
+  position: absolute;
+  top: -0.3em;
+  left: -0.4em;
+  color: transparent;
+  -webkit-text-stroke: 1px #cec8bd;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.1em;
+  margin-left: 10vw;
+}
+
+.main-top-stroke-text2 {
+  font-size: 17vw;
+  position: absolute;
+  top: 0.7em;
+  right: 0.2em;
+  color: transparent;
+  -webkit-text-stroke: 1px #cec8bd;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.1em;
+  text-align: right;
+  overflow: hidden;
+}
+
+.main-top-large-text {
+  color: #0f1923;
+  position: absolute;
+  top: 0.65em;
+  margin-left: 23vw;
+  font-size: 8.5vw;
+  white-space: pre-line;
+  font-family: "Black Han Sans", sans-serif;
+  line-height: 90%;
+}
+
+.top-line {
+  position: absolute;
+  background-color: transparent;
+  margin-left: 34vw;
+  width: 50vw;
+  height: 60em;
+  border-left: 1px solid #ece8e1;
+  border-right: 1px solid #ece8e1;
+  opacity: 0.5;
+  z-index: -2;
+}
+
+@media screen and (max-width: 1000px) {
+  .top-line {
+    display: none;
+  }
+
+  .movie {
+    min-width: none;
+    height: 500px;
+  }
+  .video-screen-main-box {
+    top: 140px;
+  }
+  .header-menu-box {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .mobile-title {
+    display: block;
+  }
+
+  .main {
+    position: absolute;
+    width: 100vw;
+    top: 590px;
+  }
+
+  .main-top-large-text {
+    position: absolute;
+    left: -20vw;
+    font-size: 15vw;
+  }
+  .header-logo {
+    padding-left: 27px;
+  }
+
+  .video-box-btn-container {
+    margin-top: 10em;
+  }
+
+  .center-logo {
+    width: 18em;
+  }
 }
