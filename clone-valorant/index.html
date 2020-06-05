@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/clone-valorant/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Header part start -->
+    <div class="header">
+      <img class="header-logo" src="/clone-valorant/img/liotLogo.png"></img>
+      <div class="header-menu-box">
+        <div class="header-menu-left">
+          <img class="header-menu-logo" src="/clone-valorant/img/valorantLogo.png"></img>
+          <ul class="header-menu">
+            <li class="header-menu-item">게임 정보<i class="fas fa-caret-down dropdown"></i></li>
+            <li class="header-menu-item">소식</li>
+            <li class="header-menu-item">고객지원<i class="fas fa-caret-down dropdown"></i></li>
+          </ul>
+        </div>
+        <div class="header-menu-right">
+          <button class="header-play-btn">지금 플레이하기</button>
+        </div>
+      </div>
+      <i class="fas fa-bars mobile-menu"></i>
+      <img
+        src="/clone-valorant/img/mobile_logo.png"
+        class="mobile-title"
+      />
+    </div>
+    <!-- Header part end -->
+
+    <!-- Video screen part start -->
+    <div class="video-screen-container">
+      <div class="video-screen">
+        <video
+          class="movie"
+          preload="auto"
+          autoplay="true"
+          loop="loop"
+          muted="muted"
+          volume="0"
+        >
+          <source src="/clone-valorant/video/VALORANT-desktop-0526.mp4" />
+        </video>
+        <div class="video-screen-main-box">
+          <div class="video-screen-text video-box-item">
+            5대5 캐릭터 기반 전술 슈팅 게임
+          </div>
+          <img
+            src="/clone-valorant/img/logo.png"
+            class="center-logo video-box-item"
+          />
+          <div class="video-box-item">
+            <div class="video-box-btn-container">
+              <div class="video-box-btn-outline">
+                <div class="video-box-btn-outline-top"></div>
+                <div class="video-box-btn-outline-bottom"></div>
+                <div class="video-box-btn-inlineBox">
+                  <div class="video-box-btn-inlineBox-text">지금 플레이하기</div>　
+                  <div class="video-box-btn-moveBox">
+                    <img class="video-box-btn-moveBox-img" src="/clone-valorant/img/btn-cover.png"/>
+                    <div class="video-box-btn-touch"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Video screen part end -->
+  </body>
+</html>
