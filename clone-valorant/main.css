@@ -265,11 +265,15 @@ body {
 .main {
   position: absolute;
   top: 50vw;
+  max-height: 66em;
+
+  overflow: hidden;
 }
 
 .main-top {
   position: relative;
-  width: 100vw;
+  min-width: 100vw;
+  height: 100em;
 }
 
 .main-top-stroke-text1 {
@@ -302,7 +306,7 @@ body {
   position: absolute;
   top: 0.65em;
   margin-left: 23vw;
-  font-size: 8.5vw;
+  font-size: 8.5em;
   white-space: pre-line;
   font-family: "Black Han Sans", sans-serif;
   line-height: 90%;
@@ -318,6 +322,55 @@ body {
   border-right: 1px solid #ece8e1;
   opacity: 0.5;
   z-index: -2;
+}
+
+.main-top-intro-box {
+  position: absolute;
+  top: 27em;
+  margin-left: 27vw;
+  width: 100%;
+  word-break: keep-all;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+  color: #757575;
+  font-family: none;
+  white-space: pre-line;
+  margin-bottom: 20em;
+}
+
+.main-top-intro-box-title {
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+  color: #0f1923;
+}
+
+.main-top-intro-box-intro {
+  max-width: 21em;
+  min-width: 15em;
+  width: 20vw;
+  height: auto;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #464b4e;
+}
+
+.main-top-intro-box-videoBox {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 5.5em;
+  left: 25%;
+}
+
+.main-top-intro-box-videoBox-img {
+  min-width: 30em;
+  max-width: 50em;
+  width: 33vw;
+  height: auto;
+}
+
+.main-top-intro-box-videoBox-img:hover {
+  opacity: 0.5;
+  transition: opacity 0.5s;
 }
 
 @media screen and (max-width: 1000px) {
@@ -345,13 +398,14 @@ body {
   .main {
     position: absolute;
     width: 100vw;
+    height: 70em;
     top: 590px;
   }
 
   .main-top-large-text {
     position: absolute;
     left: -20vw;
-    font-size: 15vw;
+    font-size: 4em;
   }
   .header-logo {
     padding-left: 27px;
@@ -363,5 +417,35 @@ body {
 
   .center-logo {
     width: 18em;
+  }
+
+  .main-top-intro-box {
+    top: 180px;
+    margin-left: 3vw;
+    width: 100vw;
+    border: none;
+  }
+
+  .main-top-intro-box-title {
+    margin-bottom: 0cm;
+  }
+
+  .main-top-intro-box-intro {
+    width: auto;
+    border: none;
+  }
+
+  .main-top-intro-box-videoBox {
+    position: absolute;
+    width: 100%;
+    top: 24em;
+    left: 0;
+  }
+
+  .main-top-intro-box-videoBox-img {
+    width: 93%;
+    height: auto;
+    min-width: 0;
+    max-width: 100%;
   }
 }
