@@ -33,10 +33,12 @@ li {
 
 .header {
   position: fixed;
+  top: 0;
   width: 100%;
   height: 70px;
-  background-color: #252525;
-  color: white;
+  background-color: white;
+  color: #252525;
+  z-index: 100;
 }
 
 .header-logo {
@@ -61,7 +63,7 @@ li {
 }
 
 .header-menu-item:hover {
-  color: #ffe283;
+  color: #3b93c3;
 }
 
 .menu-icon {
@@ -127,7 +129,8 @@ li {
   padding: 20px 0;
   margin-top: 10px;
   margin-bottom: 25px;
-  border-bottom: 1px solid black;
+  color: #3b93c3;
+  border-bottom: 1px solid #3b93c3;
   cursor: default;
 }
 
@@ -139,7 +142,7 @@ li {
 }
 
 .mobile-header-menu-item:hover {
-  background: #252525;
+  background: #3b93c3;
   color: #f8f8f8;
 }
 
@@ -149,7 +152,7 @@ li {
   justify-content: center;
   position: absolute;
   bottom: 0;
-  background-color: #252525;
+  background-color: #3b93c3;
   width: 100%;
   height: 120px;
   white-space: pre-line;
@@ -163,7 +166,7 @@ li {
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: #252525;
+  color: #3b93c3;
   cursor: pointer;
 }
 
@@ -172,16 +175,92 @@ li {
 }
 
 .top {
-  height: 2000px;
+  height: 100vh;
+  background-image: url("/smparkworkld-front/img/top.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.portfolio {
+  display: block;
+  text-align: center;
+  padding: 30px;
+}
+
+.portfolio-container {
+  display: inline-block;
+  text-align: center;
+  width: 70%;
+  max-width: 1100px;
+  min-width: 900px;
+}
+
+.portfolio-classification {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-classification-item {
+  text-align: center;
+  width: 100px;
+  padding: 0.3em;
+  background-color: white;
+  border: 1px solid #3b93c3;
+  border-radius: 20px;
+  margin: 0.5em 1em;
+  color: #3b93c3;
+  cursor: pointer;
+}
+
+.active.portfolio-classification-item {
+  background-color: #3b93c3;
+  color: white;
+}
+
+.portfolio-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
+
+.portfolio-item {
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  text-align: left;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.portfolio-filler {
+  margin: 10px;
+  width: 50px;
+  height: 0;
 }
 
 @media screen and (max-width: 1000px) {
   .menu-icon {
     display: block;
+    color: #3b93c3;
   }
 
   .header-menu {
     display: none;
+  }
+
+  .portfolio-container {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .portfolio-classification-item {
+    border-radius: 20px;
   }
 }
 
