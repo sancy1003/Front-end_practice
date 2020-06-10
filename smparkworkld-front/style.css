@@ -37,8 +37,24 @@ li {
   width: 100%;
   height: 70px;
   background-color: white;
-  color: #252525;
+  color: #747474;
   z-index: 100;
+  box-shadow: 0 3px 10px #00000017;
+  transition: background-color 0.5s;
+}
+
+.top.header{
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+}
+
+.top.header .menu-icon{
+  color: white;
+}
+
+.top.header .header-menu-item:hover {
+  color: #3b3b3b;
 }
 
 .header-logo {
@@ -64,6 +80,15 @@ li {
 
 .header-menu-item:hover {
   color: #3b93c3;
+}
+
+.part-title {
+  width: 100%;
+  font-size: 2.7em;
+  color: #22658a;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .menu-icon {
@@ -174,7 +199,7 @@ li {
   opacity: 0.5;
 }
 
-.top {
+.main-img {
   height: 100vh;
   background-image: url("/smparkworkld-front/img/top.jpg");
   background-position: center;
@@ -182,10 +207,81 @@ li {
   background-repeat: no-repeat;
 }
 
-.portfolio {
+.main {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  white-space: pre-line;
+  text-align: center;
+  margin-bottom: 40px;
+  color:#f3f3f3;
+  word-break: keep-all;
+  background-color: rgba(0, 0, 0, 0.329);
+}
+
+@keyframes mainText {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.main-welcome {
+  font-size: 3em;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  animation: mainText;
+  animation-duration: 1.5s;
+}
+
+.main-description {
+  font-size: 1.2em;
+  padding: 0 20px;
+  animation: mainText;
+  animation-duration: 1.5s;
+}
+
+.main-icon-center {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+}
+
+.main-img-drop-icon {
+  font-size: 1.5em;
+  color: #ffffffa9;
+  animation: moveIcon;
+  animation-duration: 1.7s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moveIcon {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+.part {
   display: block;
   text-align: center;
-  padding: 30px;
+  padding: 0 30px 30px 30px;
 }
 
 .portfolio-container {
@@ -214,15 +310,27 @@ li {
   cursor: pointer;
 }
 
+.portfolio-classification-item:hover {
+  color: white;
+  border: 1px solid #89c2e0;
+  background-color: #89c2e0;
+}
+
 .active.portfolio-classification-item {
   background-color: #3b93c3;
+  border: 1px solid #3b93c3;
   color: white;
 }
 
+.active.portfolio-classification-item:hover {
+  border: 1px solid #3b93c3;
+}
+
 .portfolio-main {
+  margin-top:20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   text-align: center;
   width: 100%;
 }
@@ -230,17 +338,116 @@ li {
 .portfolio-item {
   position: relative;
   display: inline-block;
-  background-color: red;
+  background-color: white;
   text-align: left;
-  margin: 10px;
-  width: 100px;
-  height: 100px;
+  margin: 1.55%;
+  width: 30%;
+  border: 1px solid #3b93c3;
+  filter: drop-shadow(0 10px 3px #00000017);
+  overflow: hidden;
 }
 
-.portfolio-filler {
-  margin: 10px;
-  width: 50px;
-  height: 0;
+.portfolio-item::before {
+  content: "";
+  display: block;
+  padding-top:100%;
+}
+
+.portfolio-item-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.portfolio-item-img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.portfolio-item-info {
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  opacity: 0;
+  background: linear-gradient(to top, #3b93c38e, rgba(0,0,0,0));
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+.portfolio-item-info:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.portfolio-item-info-sub {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25%;
+  font-size: 1.7em;
+  text-align: center;
+  color: #195270;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+.portfolio-item-info-date {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:85%;
+  right: 10%;
+  text-align: right;
+  font-size: 0.8em;
+  color: white;
+}
+
+.footer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  white-space: pre-line;
+  width: 100%;
+  height: 100px;
+  background-color: #195270;
+}
+
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+}
+
+.footer-icon {
+  margin-right: 15px;
+}
+
+.portfolio-pop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1000;
+  color: white;
 }
 
 @media screen and (max-width: 1000px) {
@@ -262,6 +469,19 @@ li {
   .portfolio-classification-item {
     border-radius: 20px;
   }
+
+  .portfolio-item {
+    margin: 1.8%;
+    width: 46%;
+  }
+
+  .portfolio-item-info-sub {
+    font-size: 3.5vw;
+  }
+  
+  .portfolio-item-info-date {
+    font-size: 2vw;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -270,5 +490,29 @@ li {
     top: 10px;
     width: 50px;
     content: url("/smparkworkld-front/img/icon.png");
+  }
+
+  .portfolio-item {
+    margin: 4%;
+    width: 96%;
+  }
+
+  .portfolio-item-info-sub {
+    font-size: 6.5vw;
+  }
+  
+  .portfolio-item-info-date {
+    font-size: 4vw;
+  }
+
+  .main-welcome {
+    font-size: 2em;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+  
+  .main-description {
+    font-size: 1em;
+    padding: 0 20px;
   }
 }

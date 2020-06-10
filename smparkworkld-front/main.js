@@ -2,11 +2,13 @@
 
 const header = document.querySelector(".header");
 const menu = document.querySelector(".menu-icon");
+const cal = document.querySelector(".cal").innerText;
+const mail = document.querySelector(".mail").innerText;
 let menuOpen = false;
 
 function openSidebar() {
   const bottomText =
-      "Cal&nbsp |&nbsp  010-0000-0000<br> Email&nbsp |&nbsp  yourmain@naver.com",
+      `Cal&nbsp |&nbsp  ${cal}<br> Email&nbsp |&nbsp  ${mail}`,
     screen = document.createElement("div"),
     title = document.createElement("div"),
     bottom = document.createElement("div"),
@@ -106,9 +108,21 @@ function delMenu() {
   }
 }
 
+function headerTop(){
+  var scrollPos = window.scrollY || document.documentElement.scrollTop;
+  if(scrollPos !== 0) {
+    header.classList.remove("top");
+  } else {
+    header.classList.add("top");
+  }
+  console.log(scrollPos);
+}
+
 function init() {
   menu.addEventListener("click", clickMenuBtn);
   window.addEventListener("resize", delMenu);
+  window.addEventListener("scroll", headerTop);
+  console.log(cal, mail);
 }
 
 init();
