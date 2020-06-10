@@ -4,11 +4,21 @@ const header = document.querySelector(".header");
 const menu = document.querySelector(".menu-icon");
 const cal = document.querySelector(".cal").innerText;
 const mail = document.querySelector(".mail").innerText;
+const portfolioClassification = document.querySelectorAll(
+  ".portfolio-classification-item"
+);
+const portfolioItemSort = document.querySelectorAll(".portfolio-item");
+const menuName = document.querySelectorAll(".header-menu-item");
+const movePos = [
+  document.querySelector("#Home"),
+  document.querySelector("#About"),
+  document.querySelector("#Portfolio"),
+];
 let menuOpen = false;
+let portfolioMode = 0;
 
 function openSidebar() {
-  const bottomText =
-      `Cal&nbsp |&nbsp  ${cal}<br> Email&nbsp |&nbsp  ${mail}`,
+  const bottomText = `Cal&nbsp |&nbsp  ${cal}<br> Email&nbsp |&nbsp  ${mail}`,
     screen = document.createElement("div"),
     title = document.createElement("div"),
     bottom = document.createElement("div"),
@@ -108,21 +118,106 @@ function delMenu() {
   }
 }
 
-function headerTop(){
-  var scrollPos = window.scrollY || document.documentElement.scrollTop;
-  if(scrollPos !== 0) {
-    header.classList.remove("top");
+function headerTop() {
+  var scrollPos = window.scrollY;
+  if (scrollPos !== 0) {
+    if (header.classList.contains("top")) {
+      header.classList.remove("top");
+    }
   } else {
-    header.classList.add("top");
+    if (!header.classList.contains("top")) {
+      header.classList.add("top");
+    }
   }
-  console.log(scrollPos);
+}
+
+function portfolioModeChange(sort) {
+  for (let i = 0; i < portfolioClassification.length; i++) {
+    if (portfolioClassification[i].innerText === sort.target.innerText) {
+      if (portfolioMode !== sort.target.innerText) {
+        portfolioClassification[portfolioMode].classList.remove("active");
+        portfolioMode = i;
+        changePortfolioBtn(i);
+      }
+    }
+  }
+}
+
+function changePortfolioBtn(i) {
+  portfolioClassification[i].classList.add("active");
+  sortPortfolioItem(i);
+}
+
+function sortPortfolioItem(array) {
+  if (portfolioClassification[array].innerText === "All") {
+    for (var i = 0; i < portfolioItemSort.length; i++) {
+      portfolioItemSort[i].style.display = "inline-block";
+    }
+  } else {
+    for (var i = 0; i < portfolioItemSort.length; i++) {
+      if (
+        portfolioItemSort[i].classList.contains(
+          `pf-${portfolioClassification[array].innerText}`
+        )
+      ) {
+        portfolioItemSort[i].style.display = "inline-block";
+      } else {
+        portfolioItemSort[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function movePosition(event) {
+  switch (event.target.innerText) {
+    case "Home":
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      break;
+    case "About":
+      window.scrollTo({ top: movePos[1].offsetTop - 100, behavior: "smooth" });
+      break;
+    case "Portfolio":
+      window.scrollTo({ top: movePos[2].offsetTop - 100, behavior: "smooth" });
+      break;
+  }
+  headerMenuCol();
+}
+
+function headerMenuCol() {
+  if (scrollY < movePos[1].offsetTop - 180) {
+    menuName[0].classList.remove("active");
+    menuName[1].classList.remove("active");
+    menuName[2].classList.remove("active");
+    menuName[0].classList.add("active");
+  } else if (
+    movePos[1].offsetTop - 180 < scrollY &&
+    scrollY < movePos[2].offsetTop - 100
+  ) {
+    menuName[0].classList.remove("active");
+    menuName[1].classList.remove("active");
+    menuName[2].classList.remove("active");
+    menuName[1].classList.add("active");
+  } else if (movePos[2].offsetTop - 180 <= scrollY) {
+    menuName[0].classList.remove("active");
+    menuName[1].classList.remove("active");
+    menuName[2].classList.remove("active");
+    menuName[2].classList.add("active");
+  }
 }
 
 function init() {
   menu.addEventListener("click", clickMenuBtn);
   window.addEventListener("resize", delMenu);
   window.addEventListener("scroll", headerTop);
-  console.log(cal, mail);
+  window.addEventListener("scroll", headerMenuCol);
+  for (var i = 0; i < portfolioClassification.length; i++) {
+    portfolioClassification[i].addEventListener("click", (event) =>
+      portfolioModeChange(event)
+    );
+  }
+  for (var i = 0; i < menuName.length; i++) {
+    menuName[i].addEventListener("click", (event) => movePosition(event));
+  }
 }
 
 init();
