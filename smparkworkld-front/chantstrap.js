@@ -1,5 +1,6 @@
 "use strict";
 
+const agent = navigator.userAgent.toLowerCase();
 const header = document.querySelector(".header");
 const menu = document.querySelector(".menu-icon");
 const cal = document.querySelector(".cal").innerText;
@@ -151,34 +152,69 @@ function changePortfolioBtn(i) {
 function sortPortfolioItem(array) {
   if (portfolioClassification[array].innerText === "All") {
     for (var i = 0; i < portfolioItemSort.length; i++) {
-      portfolioItemSort[i].style.display = "inline-block";
+      let itemSort = portfolioItemSort[i];
+      itemSort.style.display = "none";
+      itemSort.classList.remove("appear");
+      itemSort.style.opacity = 0;
+      itemSort.style.display = "inline-block";
+      setTimeout(function () {
+        itemSort.classList.add("appear");
+      }, 30);
     }
   } else {
     for (var i = 0; i < portfolioItemSort.length; i++) {
+      let itemSort = portfolioItemSort[i];
       if (
-        portfolioItemSort[i].classList.contains(
+        itemSort.classList.contains(
           `pf-${portfolioClassification[array].innerText}`
         )
       ) {
-        portfolioItemSort[i].style.display = "inline-block";
+        itemSort.style.display = "none";
+        itemSort.classList.remove("appear");
+        itemSort.style.opacity = 0;
+        itemSort.style.display = "inline-block";
+        setTimeout(function () {
+          itemSort.classList.add("appear");
+        }, 30);
       } else {
-        portfolioItemSort[i].style.display = "none";
+        itemSort.classList.remove("appear");
+        itemSort.style.display = "none";
       }
     }
   }
 }
 
 function movePosition(event) {
-  switch (event.target.innerText) {
-    case "Home":
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      break;
-    case "About":
-      window.scrollTo({ top: movePos[1].offsetTop - 100, behavior: "smooth" });
-      break;
-    case "Portfolio":
-      window.scrollTo({ top: movePos[2].offsetTop - 100, behavior: "smooth" });
-      break;
+  if (agent.indexOf("edge") != -1) {
+    switch (event.target.innerText) {
+      case "Home":
+        window.window.scroll(0, 0);
+        break;
+      case "About":
+        window.window.scroll(0, movePos[1].offsetTop - 100);
+        break;
+      case "Portfolio":
+        window.window.scroll(0, movePos[2].offsetTop - 100);
+        break;
+    }
+  } else {
+    switch (event.target.innerText) {
+      case "Home":
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        break;
+      case "About":
+        window.scrollTo({
+          top: movePos[1].offsetTop - 100,
+          behavior: "smooth",
+        });
+        break;
+      case "Portfolio":
+        window.scrollTo({
+          top: movePos[2].offsetTop - 100,
+          behavior: "smooth",
+        });
+        break;
+    }
   }
   headerMenuCol();
 }
@@ -205,7 +241,20 @@ function headerMenuCol() {
   }
 }
 
+function checkBrowser() {
+  if (agent.indexOf("edge") != -1) {
+    alert("본 사이트는 Chrome 환경에 최적화 되어있습니다.");
+  }
+  if (
+    (navigator.appName == "Netscape" && agent.indexOf("trident") != -1) ||
+    agent.indexOf("msie") != -1
+  ) {
+    alert("본 사이트는 Chrome 환경에 최적화 되어있습니다.");
+  }
+}
+
 function init() {
+  checkBrowser();
   menu.addEventListener("click", clickMenuBtn);
   window.addEventListener("resize", delMenu);
   window.addEventListener("scroll", headerTop);
