@@ -282,6 +282,16 @@ li {
   animation-iteration-count: infinite;
 }
 
+.msgMove {
+  transform: translateX(400px);
+  transition: transform 1s;
+}
+
+.comfirmMove {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
 @keyframes moveIcon {
   from {
     transform: translateY(-15px);
@@ -469,6 +479,110 @@ li {
   animation-fill-mode: forwards;
 }
 
+.contactBox {
+  display: inline-flex;
+  height: 280px;
+  text-align: left;
+  width: 70%;
+  min-width: 900px;
+  max-width: 1100px;
+  filter: drop-shadow(0 10px 3px #00000017);
+  margin-bottom: 50px;
+}
+
+.contact-send-btn {
+  position: absolute;
+  bottom:-70px;
+  right: 0;
+  z-index: 20;
+  background-color: #1c8adb;
+  border:none;
+  border-radius: 2px;
+  color: white;
+  font-size: 1em;
+  padding: 10px 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.contact-send-btn:hover {
+  background-color: #56a1d6;
+}
+
+.contactBox-left {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  background-color: #1c8adb;
+}
+
+.contact-img {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.send-after{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left:0;
+  top:0;
+  color: white;
+  font-size: 2em;
+}
+
+.contactBox-right {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  font-family: 'Nanum Gothic Coding', monospace;
+  color:#1c8adb;
+  z-index: 2;
+}
+
+.contactBox-right-msg {
+  resize: none;
+  width: 95%;
+  height:80%;
+  font-size: 1.1em;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  overflow: hidden;
+  font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.contactBox-right-writer-form {
+  width:95%;
+  text-align: right;
+  font-size: 1em;
+}
+
+.contactBox-right-writer {
+  text-align: center;
+  font-size: 1em;
+  size: 10;
+  width:300px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  overflow: hidden;
+  font-family: 'Nanum Gothic Coding', monospace;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -518,6 +632,24 @@ li {
 
   .portfolio-item-info-date {
     font-size: 2vw;
+  }
+
+  .contactBox {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contactBox-left {
+    display: none;
+  }
+
+  .contactBox-right {
+    width:100%;
+  }
+
+  .contactBox-right-writer {
+    text-align: right;
+    width: 100%;
   }
 }
 

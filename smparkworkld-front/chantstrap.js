@@ -14,7 +14,9 @@ const movePos = [
   document.querySelector("#Home"),
   document.querySelector("#About"),
   document.querySelector("#Portfolio"),
+  document.querySelector("#Contact")
 ];
+const msgSendBtn = document.querySelector(".contact-send-btn");
 let menuOpen = false;
 let portfolioMode = 0;
 
@@ -196,6 +198,9 @@ function movePosition(event) {
       case "Portfolio":
         window.window.scroll(0, movePos[2].offsetTop - 100);
         break;
+      case "Contact":
+        window.window.scroll(0, movePos[3].offsetTop - 100);
+        break;
     }
   } else {
     switch (event.target.innerText) {
@@ -214,6 +219,12 @@ function movePosition(event) {
           behavior: "smooth",
         });
         break;
+      case "Contact":
+        window.scrollTo({
+          top: movePos[3].offsetTop - 100,
+          behavior: "smooth",
+        });
+        break;
     }
   }
   headerMenuCol();
@@ -224,20 +235,29 @@ function headerMenuCol() {
     menuName[0].classList.remove("active");
     menuName[1].classList.remove("active");
     menuName[2].classList.remove("active");
+    menuName[3].classList.remove("active");
     menuName[0].classList.add("active");
   } else if (
     movePos[1].offsetTop - 180 < scrollY &&
-    scrollY < movePos[2].offsetTop - 100
+    scrollY < movePos[2].offsetTop - 180
   ) {
     menuName[0].classList.remove("active");
     menuName[1].classList.remove("active");
     menuName[2].classList.remove("active");
+    menuName[3].classList.remove("active");
     menuName[1].classList.add("active");
-  } else if (movePos[2].offsetTop - 180 <= scrollY) {
+  } else if (movePos[2].offsetTop - 180 < scrollY && movePos[3].offsetTop - 180 > scrollY) {
     menuName[0].classList.remove("active");
     menuName[1].classList.remove("active");
     menuName[2].classList.remove("active");
+    menuName[3].classList.remove("active");
     menuName[2].classList.add("active");
+  } else if (movePos[3].offsetTop - 180 <= scrollY) {
+    menuName[0].classList.remove("active");
+    menuName[1].classList.remove("active");
+    menuName[2].classList.remove("active");
+    menuName[3].classList.remove("active");
+    menuName[3].classList.add("active");
   }
 }
 
@@ -253,12 +273,26 @@ function checkBrowser() {
   }
 }
 
+function sendMessage() {
+  const mailImg = document.querySelector(".contact-img");
+  const sendAfter = document.querySelector(".send-after");
+
+  if(mailImg) {
+    mailImg.classList.add("msgMove");
+    setTimeout(function() {
+      mailImg.remove();
+      sendAfter.classList.add("comfirmMove");
+    }, 1000);
+  }
+}
+
 function init() {
   checkBrowser();
   menu.addEventListener("click", clickMenuBtn);
   window.addEventListener("resize", delMenu);
   window.addEventListener("scroll", headerTop);
   window.addEventListener("scroll", headerMenuCol);
+  msgSendBtn.addEventListener("click", sendMessage);
   for (var i = 0; i < portfolioClassification.length; i++) {
     portfolioClassification[i].addEventListener("click", (event) =>
       portfolioModeChange(event)
