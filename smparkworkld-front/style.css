@@ -306,6 +306,7 @@ li {
   text-align: center;
   padding: 0 30px 30px 30px;
   background-color: #fafafa;
+  margin-bottom: 150px;
 }
 
 .portfolio-container {
@@ -492,11 +493,11 @@ li {
 
 .contact-send-btn {
   position: absolute;
-  bottom:-70px;
+  bottom: -70px;
   right: 0;
   z-index: 20;
   background-color: #1c8adb;
-  border:none;
+  border: none;
   border-radius: 2px;
   color: white;
   font-size: 1em;
@@ -519,22 +520,22 @@ li {
 
 .contact-img {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.send-after{
+.send-after {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   width: 100%;
   height: 100%;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
   color: white;
   font-size: 2em;
 }
@@ -548,25 +549,25 @@ li {
   height: 100%;
   background-color: white;
   text-align: center;
-  font-family: 'Nanum Gothic Coding', monospace;
-  color:#1c8adb;
+  font-family: "Nanum Gothic Coding", monospace;
+  color: #1c8adb;
   z-index: 2;
 }
 
 .contactBox-right-msg {
   resize: none;
   width: 95%;
-  height:80%;
+  height: 80%;
   font-size: 1.1em;
   border: none;
   background-color: transparent;
   outline: none;
   overflow: hidden;
-  font-family: 'Nanum Gothic Coding', monospace;
+  font-family: "Nanum Gothic Coding", monospace;
 }
 
 .contactBox-right-writer-form {
-  width:95%;
+  width: 95%;
   text-align: right;
   font-size: 1em;
 }
@@ -575,12 +576,12 @@ li {
   text-align: center;
   font-size: 1em;
   size: 10;
-  width:300px;
+  width: 300px;
   border: none;
   background-color: transparent;
   outline: none;
   overflow: hidden;
-  font-family: 'Nanum Gothic Coding', monospace;
+  font-family: "Nanum Gothic Coding", monospace;
 }
 
 @keyframes fade-in {
@@ -599,6 +600,109 @@ li {
   to {
     opacity: 0;
   }
+}
+
+.about-container {
+  display: inline-block;
+  text-align: left;
+  width: 70%;
+  max-width: 1100px;
+  min-width: 900px;
+  font-size: 1.1em;
+  color: #363636;
+}
+
+.about-container-top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 60px;
+}
+
+.about-intro-box {
+  position: relative;
+}
+
+.about-like-box {
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+  font-size: 8.4em;
+  color: #ff7d7d;
+}
+
+.about-like-box .far {
+  cursor: pointer;
+  animation: likeBtn 1s;
+}
+
+.about-like-box .far:hover {
+  color: #f85151;
+}
+
+@keyframes likeBtn {
+  from {
+    transform: rotateZ(30deg) translateY(50px);
+  }
+  to {
+    transform: rotateZ(0) translateY(0);
+  }
+}
+
+.like-box-text {
+  position: absolute;
+  left: -70px;
+  top: 20px;
+  font-size: 0.1em;
+  background-color: #525252;
+  color: rgb(247, 247, 247);
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.about-intro-box,
+.about-info-box,
+.about-skill-box {
+  margin-bottom: 70px;
+}
+
+.about-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-info-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-info-item .fas {
+  font-size: 4em;
+  margin-bottom: 30px;
+  color: #71a3be;
+}
+
+.about-info-item .fab {
+  font-size: 4em;
+  margin-bottom: 30px;
+  color: #71a3be;
+  cursor: pointer;
+}
+
+.about-info-item .fab:hover {
+  color: #195270;
+}
+
+.about-title {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  color: #2d6e91;
+}
+
+.about-intro {
 }
 
 @media screen and (max-width: 1000px) {
@@ -644,7 +748,7 @@ li {
   }
 
   .contactBox-right {
-    width:100%;
+    width: 100%;
   }
 
   .contactBox-right-writer {

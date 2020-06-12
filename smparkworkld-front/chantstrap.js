@@ -14,7 +14,7 @@ const movePos = [
   document.querySelector("#Home"),
   document.querySelector("#About"),
   document.querySelector("#Portfolio"),
-  document.querySelector("#Contact")
+  document.querySelector("#Contact"),
 ];
 const msgSendBtn = document.querySelector(".contact-send-btn");
 let menuOpen = false;
@@ -239,20 +239,23 @@ function headerMenuCol() {
     menuName[0].classList.add("active");
   } else if (
     movePos[1].offsetTop - 180 < scrollY &&
-    scrollY < movePos[2].offsetTop - 180
+    scrollY < movePos[2].offsetTop - 300
   ) {
     menuName[0].classList.remove("active");
     menuName[1].classList.remove("active");
     menuName[2].classList.remove("active");
     menuName[3].classList.remove("active");
     menuName[1].classList.add("active");
-  } else if (movePos[2].offsetTop - 180 < scrollY && movePos[3].offsetTop - 180 > scrollY) {
+  } else if (
+    movePos[2].offsetTop - 299 < scrollY &&
+    movePos[3].offsetTop - 300 > scrollY
+  ) {
     menuName[0].classList.remove("active");
     menuName[1].classList.remove("active");
     menuName[2].classList.remove("active");
     menuName[3].classList.remove("active");
     menuName[2].classList.add("active");
-  } else if (movePos[3].offsetTop - 180 <= scrollY) {
+  } else if (movePos[3].offsetTop - 299 < scrollY) {
     menuName[0].classList.remove("active");
     menuName[1].classList.remove("active");
     menuName[2].classList.remove("active");
@@ -277,9 +280,9 @@ function sendMessage() {
   const mailImg = document.querySelector(".contact-img");
   const sendAfter = document.querySelector(".send-after");
 
-  if(mailImg) {
+  if (mailImg) {
     mailImg.classList.add("msgMove");
-    setTimeout(function() {
+    setTimeout(function () {
       mailImg.remove();
       sendAfter.classList.add("comfirmMove");
     }, 1000);
