@@ -671,6 +671,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  font-family: "Nanum Gothic Coding", monospace;
 }
 
 .about-info-item {
@@ -697,12 +698,42 @@ li {
 }
 
 .about-title {
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin-bottom: 30px;
   color: #2d6e91;
 }
 
 .about-intro {
+}
+
+.about-skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about-skill-item-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.ablut-skill-item-title {
+  color: #22658a;
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ablut-skill-item-title .fas {
+  margin-right: 15px;
+}
+
+.about-skill-item img {
+  width: auto;
+  height: 100px;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -754,6 +785,24 @@ li {
   .contactBox-right-writer {
     text-align: right;
     width: 100%;
+  }
+
+  .about-container {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .about-intro {
+    word-break: keep-all;
+  }
+
+  .about-like-box {
+    display: none;
+  }
+
+  .about-info {
+    flex-wrap: wrap;
   }
 }
 
