@@ -634,7 +634,10 @@ li {
 
 .about-like-box .far {
   cursor: pointer;
-  animation: likeBtn 1s;
+}
+
+.likeAnim {
+  animation: likeBtn 2s;
 }
 
 .about-like-box .far:hover {
@@ -686,6 +689,26 @@ li {
   color: #71a3be;
 }
 
+.info-item-move {
+  animation: textMove 2s;
+}
+
+.info-item-pre {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes textMove {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 .about-info-item .fab {
   font-size: 4em;
   margin-bottom: 30px;
@@ -720,10 +743,26 @@ li {
 }
 
 .ablut-skill-item-title {
-  color: #22658a;
+  color: #7c7c7c;
   font-size: 1.3em;
   text-align: center;
   margin-bottom: 20px;
+  background-color: white;
+  border-radius: 0.5em;
+  filter: drop-shadow(0 10px 4px #0000000a);
+  padding: 5px 0;
+}
+
+#tt_lang.ablut-skill-item-title {
+  color: #f77a40;
+}
+
+#tt_db.ablut-skill-item-title {
+  color: #354783;
+}
+
+#tt_tool.ablut-skill-item-title {
+  color: #aa58c4;
 }
 
 .ablut-skill-item-title .fas {
@@ -803,6 +842,41 @@ li {
 
   .about-info {
     flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .about-info-item {
+    width: 33%;
+    margin-bottom: 50px;
+  }
+
+  .about-info-item.youtube {
+    margin-bottom: 0;
+  }
+
+  .about-info-item.git {
+    margin-bottom: 0;
+  }
+
+  .about-skill-item-box {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .about-skill-item {
+    width: 33%;
+    text-align: center;
+  }
+
+  #DB .about-skill-item {
+    width: 50%;
+    text-align: center;
+  }
+
+  .about-skill-item img {
+    width: 20%;
+    min-width: 100px;
+    height: auto;
   }
 }
 
@@ -836,5 +910,38 @@ li {
   .main-description {
     font-size: 1em;
     padding: 0 20px;
+  }
+
+  .about-info {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .about-info-item {
+    width: 50%;
+    margin-bottom: 50px;
+    font-size: 0.9em;
+  }
+
+  .about-info-item.youtube {
+    margin-bottom: 0;
+  }
+
+  .about-info-item.git {
+    margin-bottom: 50px;
+  }
+
+  .about-skill-item-box {
+    flex-wrap: wrap;
+  }
+
+  .about-skill-item {
+    width: 50%;
+    text-align: center;
+  }
+
+  .about-skill-item img {
+    width: 50%;
+    height: auto;
   }
 }

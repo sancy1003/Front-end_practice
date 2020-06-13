@@ -289,6 +289,35 @@ function sendMessage() {
   }
 }
 
+function scrollAnimation() {
+  const likeBtn = document.querySelector(".js-like");
+  const infoItem = document.querySelectorAll(".about-info-item");
+  let likeBtnOffsetTop =
+    likeBtn.parentElement.parentElement.offsetTop +
+    likeBtn.parentElement.offsetTop +
+    likeBtn.offsetTop;
+  let infoItemOffsetTop = infoItem[0].offsetTop;
+
+  if (
+    window.scrollY < likeBtnOffsetTop &&
+    likeBtnOffsetTop < window.scrollY + window.innerHeight &&
+    !likeBtn.classList.contains("likeAnim")
+  ) {
+    likeBtn.classList.add("likeAnim");
+  }
+
+  for (let i = 0; i < infoItem.length; i++) {
+    if (
+      window.scrollY < infoItemOffsetTop &&
+      infoItemOffsetTop < window.scrollY + window.innerHeight &&
+      !infoItem[i].classList.contains("info-item-move")
+    ) {
+      infoItem[i].classList.add("info-item-move");
+      infoItem[i].classList.remove("info-item-pre");
+    }
+  }
+}
+
 function init() {
   checkBrowser();
   menu.addEventListener("click", clickMenuBtn);
@@ -304,6 +333,7 @@ function init() {
   for (var i = 0; i < menuName.length; i++) {
     menuName[i].addEventListener("click", (event) => movePosition(event));
   }
+  window.addEventListener("scroll", scrollAnimation);
 }
 
 init();
